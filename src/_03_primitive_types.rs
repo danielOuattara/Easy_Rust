@@ -1,10 +1,8 @@
-pub fn primitive_type(){
-
-    
+pub fn main() {
     /*
-    
+
     integers :
-    --------- 
+    ---------
 
     i8, i16, i32, i64, i128, isize
     u8, u16, u32, u64, u128, usize
@@ -22,11 +20,10 @@ pub fn primitive_type(){
     /* casting
     ---------- */
 
-    /* 
+    /*
     -10 as an i8 is 11110110
-    -10 as an i8 is 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110
-    
-    
+    -10 as an i128 is 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110110
+
      */
 
     let my_number = 100; // We didn't write a type of integer,
@@ -34,14 +31,13 @@ pub fn primitive_type(){
                          // chooses i32 for integers if you don't
                          // tell it to use a different type
 
-
-    println!("{}", my_number as char); // ⚠️ ERROR
+    // println!("{}", my_number as char); // ⚠️ ERROR
 
     println!("{}", my_number as u8 as char); // OK --> 'd'
 
     // Better way: specify the type initially
 
-    et my_number: u8 = 100; //  change my_number to my_number: u8
+    let my_number: u8 = 100; //  change my_number to my_number: u8
     println!("{}", my_number as char);
 
     //-------------------------------
@@ -52,9 +48,8 @@ pub fn primitive_type(){
     println!("Size of string containing '国': {}", "国".len());
     println!("Size of string containing '𓅱': {}", "𓅱".len());
 
-    // rust .len() gibe the size in terms of number of bytes
+    // rust .len() give the size in terms of number of bytes
 
-    
     let slice = "Hello!";
     println!("Slice is {} bytes.", slice.len());
     let slice2 = "안녕!"; // Korean for "hi"
@@ -63,12 +58,15 @@ pub fn primitive_type(){
     // If .len() gives the size in bytes, what about the size in characters?
 
     let slice = "Hello!";
-    println!("Slice is {} bytes and also {} characters.", slice.len(), slice.chars().count());
+    println!(
+        "Slice is {} bytes and also {} characters.",
+        slice.len(),
+        slice.chars().count()
+    );
     let slice2 = "안녕!";
-    println!("Slice2 is {} bytes but only {} characters.", slice2.len(), slice2.chars().count());
-}
-
-
-
-
+    println!(
+        "Slice2 is {} bytes but only {} characters.",
+        slice2.len(),
+        slice2.chars().count()
+    );
 }
